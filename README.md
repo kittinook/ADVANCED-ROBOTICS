@@ -1,6 +1,6 @@
 
 
-# TurtleBot4 Setup and Teleoperation
+# TurtleBot3 Setup and Teleoperation
 
 This repository contains the steps to set up and control a TurtleBot3 robot using Docker and ROS2. 
 
