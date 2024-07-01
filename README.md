@@ -1,6 +1,6 @@
 
 
-# TurtleBot3 Setup and Teleoperation
+# TurtleBot4 Setup and Teleoperation
 
 This repository contains the steps to set up and control a TurtleBot3 robot using Docker and ROS2. 
 
@@ -21,6 +21,8 @@ sudo apt-get install docker-compose-v2
 Navigate to the directory where you saved your Dockerfile. For example:
 
 ```sh
+cd ~/Desktop/
+git clone https://github.com/kittinook/ADVANCED-ROBOTICS.git
 cd ~/Desktop/ADVANCED-ROBOTICS
 ```
 
