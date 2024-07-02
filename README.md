@@ -117,6 +117,10 @@ sudo docker start ff89ac00951c
 sudo docker attach ff89ac00951c
 ```
 
+First time, copy .bashrc
+``` sh
+sudo cp ~/turtlebot3_ws/.bashrc ~/
+```
 
 ## Troubleshooting
 
