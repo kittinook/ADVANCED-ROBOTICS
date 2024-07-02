@@ -14,6 +14,7 @@ This repository contains the steps to set up and control a TurtleBot3 robot usin
 
 ### 1. Install Docker Compose
 ```sh
+sudo apt-get update
 sudo apt-get install docker-compose-v2
 ```
 
