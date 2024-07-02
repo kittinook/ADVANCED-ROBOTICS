@@ -121,3 +121,5 @@ source ~/turtlebot3_ws/install/setup.bash
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 export TURTLEBOT3_MODEL=burger
 export LDS_MODEL=LDS-01
+sudo chmod 777 /dev/ttyUSB0
+sudo chmod 777 /dev/ttyACM0
