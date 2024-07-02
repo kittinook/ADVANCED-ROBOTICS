@@ -127,3 +127,55 @@ sudo docker attach ff89ac00951c
 ---
 
 This README provides a step-by-step guide to set up and control the TurtleBot3 robot, along with an optional section for building your own Docker image. You can customize the README further based on your project's specific details and requirements.
+
+##########
+# Deploy Code
+
+To save a Docker container to a local file, you need to follow a series of steps that involve committing the container’s state to an image and then exporting that image to a tar file. Here's a step-by-step guide on how to do this:
+
+## 1. Commit the Container to an Image
+First, you need to commit the running or stopped container to a new image. This will save the current state of the container.
+``` sh
+sudo docker commit <container_id_or_name> <new_image_name>
+```
+For eample:
+``` sh
+sudo docker commit ff89ac00951c my_turtlebot3_image
+```
+
+## 2. Save the image to a tar file:
+
+``` sh
+sudo docker save -o my_turtlebot3_image.tar my_turtlebot3_image
+```
+
+## 3. Load the image from a tar file (on the same or another machine):
+``` sh
+sudo docker load -i my_turtlebot3_image.tar
+```
+This process ensures that you can save the state of your Docker container to a file and later restore it, preserving all the changes made in the container.
+
+After you have loaded the Docker image using the docker load command, you can run a new container from the loaded image. Here are the steps and commands you need to follow:
+
+## 4. Verify the Image is Loaded
+List the Docker images to verify that the image was loaded correctly:
+
+``` sh
+sudo docker images
+```
+You should see your image (my_turtlebot3_image) listed in the output.
+
+## 5. Run a Container from the Loaded Image
+Now you can run a new container from the loaded image using the docker run command. This command will start a container and open a shell inside it:
+
+``` sh
+sudo docker run -it -p 6080:80 --device=/dev/ttyUSB0 --device=/dev/ttyACM0 --privileged --shm-size=512m --security-opt seccomp=unconfined -v ~/Desktop/ADVANCED-ROBOTICS/ros2_ws:/home/ubuntu/turtlebot3_ws my_turtlebot3_image /bin/bash
+```
+
+### Delete the Docker Image
+Once you have identified the image you want to delete, use the docker rmi command followed by the image ID or the repository and tag name.
+
+#### Delete by Image ID
+``` sh
+sudo docker rmi <image_id>
+```
