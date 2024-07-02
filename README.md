@@ -54,7 +54,7 @@ OUTPUT
 After the image is built, you can run a container using that image. This will start a container and open a shell inside it:
 
 ```sh
-docker run -it -p 6080:80  --device=/dev/ttyUSB0  --device=/dev/ttyACM0  --privileged  --shm-size=4096  --security-opt seccomp=unconfined  -v ~/Desktop/ADVANCED-ROBOTICS/ros2_ws:/home/ubuntu/turtlebot3_ws my-turtlebot3-image /bin/bash
+sudo docker run -it -p 6080:80  --device=/dev/ttyUSB0  --device=/dev/ttyACM0  --privileged  --shm-size=4096  --security-opt seccomp=unconfined  -v ~/Desktop/ADVANCED-ROBOTICS/ros2_ws:/home/ubuntu/turtlebot3_ws my-turtlebot3-image /bin/bash
 ```
 
 
